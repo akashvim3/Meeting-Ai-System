@@ -1,0 +1,535 @@
+/* ============================================
+   SETTINGS PAGE STYLES
+   ============================================ */
+
+.settings-section {
+    display: none;
+}
+
+.settings-section.active {
+    display: block;
+}
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.settings-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.settings-header p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.settings-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+}
+
+.settings-card h3 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--light-secondary);
+}
+
+/* Profile Photo */
+.profile-photo-section {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--light-secondary);
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.profile-photo {
+    position: relative;
+}
+
+.avatar-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.edit-photo-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: var(--white);
+    border: 3px solid var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.edit-photo-btn:hover {
+    background: var(--primary-dark);
+}
+
+/* Settings Form */
+.settings-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.settings-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.settings-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.settings-form input,
+.settings-form select,
+.settings-form textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--light-secondary);
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.settings-form input:focus,
+.settings-form select:focus,
+.settings-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--light-secondary);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background: var(--gradient-primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Notification Item */
+.notification-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--light-secondary);
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item h4 {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.notification-item p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Integrations Grid */
+.integrations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.integration-card {
+    background: var(--light);
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    border: 2px solid var(--light-secondary);
+    transition: var(--transition);
+}
+
+.integration-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.integration-card.connected {
+    border-color: #10b981;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(16, 185, 129, 0.02));
+}
+
+.integration-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--light-secondary);
+    color: var(--text-secondary);
+}
+
+.status-badge.connected {
+    background: #10b981;
+    color: var(--white);
+}
+
+.integration-card h3 {
+    margin-bottom: 0.5rem;
+    padding: 0;
+    border: none;
+}
+
+.integration-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Team Table */
+.team-table {
+    overflow-x: auto;
+}
+
+.team-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.team-table th,
+.team-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--light-secondary);
+}
+
+.team-table th {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.member-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.member-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.member-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.member-email {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.role-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.role-badge.owner {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+    color: var(--primary-color);
+}
+
+.role-badge.admin {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.role-badge.member {
+    background: var(--light-secondary);
+    color: var(--text-secondary);
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    background: var(--text-light);
+}
+
+.status-dot.active {
+    background: #10b981;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Billing */
+.current-plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+    border-radius: var(--radius-lg);
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--light);
+    border-radius: var(--radius-lg);
+}
+
+.payment-method p {
+    margin: 0.25rem 0;
+}
+
+.billing-table {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.billing-table th,
+.billing-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--light-secondary);
+}
+
+.status-badge.paid {
+    background: #10b981;
+    color: var(--white);
+}
+
+/* Security */
+.session-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--light);
+    border-radius: var(--radius-lg);
+    margin-bottom: 1rem;
+}
+
+.session-item h4 {
+    margin-bottom: 0.25rem;
+}
+
+.session-item p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.activity-list {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light-secondary);
+}
+
+.activity-list li:last-child {
+    border-bottom: none;
+}
+
+/* Theme Options */
+.theme-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.theme-option {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    border: 2px solid var(--light-secondary);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.theme-option:hover {
+    border-color: var(--primary-color);
+}
+
+.theme-option.active {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));
+}
+
+.theme-preview {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 0.5rem;
+    border-radius: var(--radius-md);
+    border: 2px solid var(--light-secondary);
+}
+
+.theme-preview.light {
+    background: linear-gradient(135deg, #ffffff 50%, #f8fafc 50%);
+}
+
+.theme-preview.dark {
+    background: linear-gradient(135deg, #1e293b 50%, #0f172a 50%);
+}
+
+.theme-preview.auto {
+    background: linear-gradient(135deg, #ffffff 50%, #1e293b 50%);
+}
+
+/* Danger Zone */
+.danger-zone {
+    border: 2px solid #ef4444;
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.danger-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .settings-form .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-photo-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .integrations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .current-plan,
+    .danger-actions {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}

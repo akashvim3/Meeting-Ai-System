@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - MeetingAI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>MeetingAI</span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="dashboard.html" class="btn-nav">Dashboard</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signup.html" class="btn-nav">Sign Up</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero help-hero">
+        <div class="hero-background">
+            <div class="gradient-circle circle-1"></div>
+            <div class="gradient-circle circle-2"></div>
+        </div>
+        <div class="container">
+            <h1>How can we <span class="gradient-text">help you</span>?</h1>
+            <p style="max-width: 600px; margin: 0 auto;">Search our knowledge base or browse categories below</p>
+
+            <div class="search-box">
+                <label for="helpSearch"></label><input type="text" placeholder="Search for help articles..." id="helpSearch">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Categories -->
+    <section style="padding: 4rem 0;">
+        <div class="container">
+            <div class="help-categories">
+                <div class="help-category" onclick="scrollToFAQ()">
+                    <div class="help-category-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Getting Started</h3>
+                    <p>Learn the basics and get up and running quickly</p>
+                    <span class="link-primary">12 articles →</span>
+                </div>
+
+                <div class="help-category">
+                    <div class="help-category-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Recording & Transcription</h3>
+                    <p>Everything about recording meetings and transcripts</p>
+                    <span class="link-primary">18 articles →</span>
+                </div>
+
+                <div class="help-category">
+                    <div class="help-category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI Features</h3>
+                    <p>Understanding summaries and action items</p>
+                    <span class="link-primary">15 articles →</span>
+                </div>
+
+                <div class="help-category">
+                    <div class="help-category-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Integrations</h3>
+                    <p>Connect with Zoom, Teams, and other tools</p>
+                    <span class="link-primary">10 articles →</span>
+                </div>
+
+                <div class="help-category">
+                    <div class="help-category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Team Management</h3>
+                    <p>Add team members and manage permissions</p>
+                    <span class="link-primary">8 articles →</span>
+                </div>
+
+                <div class="help-category">
+                    <div class="help-category-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security & Privacy</h3>
+                    <p>Learn about data security and compliance</p>
+                    <span class="link-primary">14 articles →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I start recording a meeting?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Click the "New Meeting" button in your dashboard, allow microphone access when prompted, and click "Start Recording". The AI will begin transcribing in real-time automatically.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What languages are supported?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            MeetingAI supports 30+ languages including English, Spanish, French, German, Chinese, Japanese, and more. The system automatically detects the language being spoken.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I integrate with Zoom or Teams?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! MeetingAI integrates seamlessly with Zoom, Microsoft Teams, Google Meet, and other popular video conferencing platforms. Connect your accounts in the Integrations settings.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How accurate is the transcription?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Our AI-powered transcription achieves 98% accuracy in optimal conditions. Accuracy may vary based on audio quality, background noise, and accents. You can always edit transcripts manually if needed.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is my data secure and private?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely. We are SOC 2 Type II certified and GDPR compliant. All data is encrypted end-to-end, and we never share your meeting content with third parties. You have full control over your data.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I export transcripts and summaries?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! You can export your transcripts and summaries in multiple formats including PDF, DOCX, TXT, and JSON. You can also share them directly with team members or integrate with project management tools.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's included in the free trial?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            The 14-day free trial includes full access to all Professional plan features: unlimited meetings, advanced transcription, AI summaries, action item tracking, integrations, and priority support. No credit card required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do action items work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Our AI automatically identifies tasks and action items mentioned during meetings, assigns them to the appropriate team members, and tracks completion status. You can also manually add or edit action items.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Support -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Still need help?</h2>
+                <p>Our support team is here to assist you 24/7</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-envelope"></i> Contact Support
+                    </a>
+                    <a href="#" class="btn btn-outline btn-large">
+                        <i class="fas fa-comments"></i> Live Chat
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>MeetingAI</span>
+                    </div>
+                    <p>Transform your meetings into actionable insights.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MeetingAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Help Search
+        document.getElementById('helpSearch').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            // Implement search functionality
+            console.log('Searching for:', query);
+        });
+
+        function scrollToFAQ() {
+            document.getElementById('faq').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

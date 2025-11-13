@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting History - MeetingAI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/meetings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>MeetingAI</span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="dashboard.html" class="btn-nav">Dashboard</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="signup.html" class="btn-nav">Sign Up</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Dashboard</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="meetings.html" class="sidebar-link active">
+                    <i class="fas fa-video"></i>
+                    <span>Meetings</span>
+                    <span class="badge">156</span>
+                </a>
+                <a href="transcripts.html" class="sidebar-link">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Transcripts</span>
+                </a>
+                <a href="action-items.html" class="sidebar-link">
+                    <i class="fas fa-tasks"></i>
+                    <span>Action Items</span>
+                    <span class="badge">5</span>
+                </a>
+                <a href="analytics.html" class="sidebar-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="settings.html" class="sidebar-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="meetings-header">
+                <div>
+                    <h1>Meeting History</h1>
+                    <p>View, search, and manage all your recorded meetings</p>
+                </div>
+                <button class="btn btn-primary" onclick="window.location.href='dashboard.html'">
+                    <i class="fas fa-plus"></i> New Meeting
+                </button>
+            </header>
+
+            <!-- Filters & Search -->
+            <div class="filters-section">
+                <div class="search-filter">
+                    <div class="search-box-meetings">
+                        <i class="fas fa-search"></i>
+                        <label for="searchMeetings"></label><input type="text" id="searchMeetings" placeholder="Search meetings by title, participant, or content...">
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <button class="filter-btn" id="filterToggle">
+                        <i class="fas fa-filter"></i>
+                        Filters
+                    </button>
+                    <div class="dropdown">
+                        <button class="dropdown-btn">
+                            <i class="fas fa-sort"></i>
+                            Sort By: Date
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" data-sort="date">Date (Newest First)</a>
+                            <a href="#" data-sort="date-old">Date (Oldest First)</a>
+                            <a href="#" data-sort="duration">Duration</a>
+                            <a href="#" data-sort="title">Title (A-Z)</a>
+                        </div>
+                    </div>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Filters Panel -->
+            <div class="filters-panel" id="filtersPanel">
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label>Date Range</label>
+                        <div class="date-range">
+                            <label for="dateFrom"></label><input type="date" id="dateFrom">
+                            <span>to</span>
+                            <label for="dateTo"></label><input type="date" id="dateTo">
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Duration</label>
+                        <label for="durationFilter"></label><select id="durationFilter">
+                            <option value="">All Durations</option>
+                            <option value="0-30">0-30 minutes</option>
+                            <option value="30-60">30-60 minutes</option>
+                            <option value="60-120">1-2 hours</option>
+                            <option value="120+">2+ hours</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Participants</label>
+                        <label for="participantFilter"></label><select id="participantFilter">
+                            <option value="">All Participants</option>
+                            <option value="john">John Mitchell</option>
+                            <option value="sarah">Sarah Chen</option>
+                            <option value="mike">Michael Rodriguez</option>
+                            <option value="emily">Emily Thompson</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Tags</label>
+                        <div class="tag-filter">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="product">
+                                <span>Product</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="team">
+                                <span>Team</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="client">
+                                <span>Client</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="strategy">
+                                <span>Strategy</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-actions-bottom">
+                    <button class="btn btn-primary" id="applyFilters">Apply Filters</button>
+                    <button class="btn btn-secondary" id="clearFilters">Clear All</button>
+                </div>
+            </div>
+
+            <!-- Meetings Grid -->
+            <div class="meetings-grid" id="meetingsGrid">
+                <!-- Meeting Card 1 -->
+                <div class="meeting-card" data-date="2025-10-02" data-duration="90" data-tags="product,strategy">
+                    <div class="meeting-card-header">
+                        <div class="meeting-date">
+                            <span class="date-day">02</span>
+                            <span class="date-month">Oct</span>
+                        </div>
+                        <div class="meeting-actions-dropdown">
+                            <button class="action-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="actions-menu">
+                                <a href="#"><i class="fas fa-eye"></i> View Details</a>
+                                <a href="#"><i class="fas fa-download"></i> Download</a>
+                                <a href="#"><i class="fas fa-share"></i> Share</a>
+                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="meeting-card-body">
+                        <h3>Product Roadmap Q4 Review</h3>
+                        <p class="meeting-meta">
+                            <i class="fas fa-clock"></i> 1h 30m
+                            <i class="fas fa-users"></i> 5 participants
+                        </p>
+                        <div class="meeting-tags">
+                            <span class="tag">Product</span>
+                            <span class="tag">Strategy</span>
+                        </div>
+                        <div class="meeting-summary">
+                            Discussed Q4 objectives, reviewed progress on key initiatives, and identified action items for the quarter...
+                        </div>
+                    </div>
+
+                    <div class="meeting-card-footer">
+                        <div class="participants-avatars">
+                            <div class="avatar-sm">JM</div>
+                            <div class="avatar-sm">SC</div>
+                            <div class="avatar-sm">MR</div>
+                            <div class="avatar-sm more">+2</div>
+                        </div>
+                        <button class="btn btn-secondary btn-sm">View Summary</button>
+                    </div>
+                </div>
+
+                <!-- Meeting Card 2 -->
+                <div class="meeting-card" data-date="2025-10-01" data-duration="45" data-tags="team">
+                    <div class="meeting-card-header">
+                        <div class="meeting-date">
+                            <span class="date-day">01</span>
+                            <span class="date-month">Oct</span>
+                        </div>
+                        <div class="meeting-actions-dropdown">
+                            <button class="action-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="actions-menu">
+                                <a href="#"><i class="fas fa-eye"></i> View Details</a>
+                                <a href="#"><i class="fas fa-download"></i> Download</a>
+                                <a href="#"><i class="fas fa-share"></i> Share</a>
+                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="meeting-card-body">
+                        <h3>Weekly Team Standup</h3>
+                        <p class="meeting-meta">
+                            <i class="fas fa-clock"></i> 45m
+                            <i class="fas fa-users"></i> 8 participants
+                        </p>
+                        <div class="meeting-tags">
+                            <span class="tag">Team</span>
+                        </div>
+                        <div class="meeting-summary">
+                            Team progress updates, blocker discussions, and sprint planning for the upcoming week...
+                        </div>
+                    </div>
+
+                    <div class="meeting-card-footer">
+                        <div class="participants-avatars">
+                            <div class="avatar-sm">JM</div>
+                            <div class="avatar-sm">SC</div>
+                            <div class="avatar-sm">MR</div>
+                            <div class="avatar-sm more">+5</div>
+                        </div>
+                        <button class="btn btn-secondary btn-sm">View Summary</button>
+                    </div>
+                </div>
+
+                <!-- Meeting Card 3 -->
+                <div class="meeting-card" data-date="2025-09-30" data-duration="135" data-tags="client,sales">
+                    <div class="meeting-card-header">
+                        <div class="meeting-date">
+                            <span class="date-day">30</span>
+                            <span class="date-month">Sep</span>
+                        </div>
+                        <div class="meeting-actions-dropdown">
+                            <button class="action-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="actions-menu">
+                                <a href="#"><i class="fas fa-eye"></i> View Details</a>
+                                <a href="#"><i class="fas fa-download"></i> Download</a>
+                                <a href="#"><i class="fas fa-share"></i> Share</a>
+                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="meeting-card-body">
+                        <h3>Client Presentation - TechCorp</h3>
+                        <p class="meeting-meta">
+                            <i class="fas fa-clock"></i> 2h 15m
+                            <i class="fas fa-users"></i> 6 participants
+                        </p>
+                        <div class="meeting-tags">
+                            <span class="tag">Client</span>
+                            <span class="tag">Sales</span>
+                        </div>
+                        <div class="meeting-summary">
+                            Product demo, feature discussion, pricing negotiation, and next steps for implementation...
+                        </div>
+                    </div>
+
+                    <div class="meeting-card-footer">
+                        <div class="participants-avatars">
+                            <div class="avatar-sm">JM</div>
+                            <div class="avatar-sm">ET</div>
+                            <div class="avatar-sm">MR</div>
+                            <div class="avatar-sm more">+3</div>
+                        </div>
+                        <button class="btn btn-secondary btn-sm">View Summary</button>
+                    </div>
+                </div>
+
+                <!-- Meeting Card 4 -->
+                <div class="meeting-card" data-date="2025-09-28" data-duration="60" data-tags="strategy">
+                    <div class="meeting-card-header">
+                        <div class="meeting-date">
+                            <span class="date-day">28</span>
+                            <span class="date-month">Sep</span>
+                        </div>
+                        <div class="meeting-actions-dropdown">
+                            <button class="action-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="actions-menu">
+                                <a href="#"><i class="fas fa-eye"></i> View Details</a>
+                                <a href="#"><i class="fas fa-download"></i> Download</a>
+                                <a href="#"><i class="fas fa-share"></i> Share</a>
+                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="meeting-card-body">
+                        <h3>Marketing Strategy Session</h3>
+                        <p class="meeting-meta">
+                            <i class="fas fa-clock"></i> 1h 0m
+                            <i class="fas fa-users"></i> 4 participants
+                        </p>
+                        <div class="meeting-tags">
+                            <span class="tag">Strategy</span>
+                        </div>
+                        <div class="meeting-summary">
+                            Campaign planning, budget allocation, channel strategy, and success metrics definition...
+                        </div>
+                    </div>
+
+                    <div class="meeting-card-footer">
+                        <div class="participants-avatars">
+                            <div class="avatar-sm">ET</div>
+                            <div class="avatar-sm">SC</div>
+                            <div class="avatar-sm">JM</div>
+                            <div class="avatar-sm more">+1</div>
+                        </div>
+                        <button class="btn btn-secondary btn-sm">View Summary</button>
+                    </div>
+                </div>
+
+                <!-- Meeting Card 5 -->
+                <div class="meeting-card" data-date="2025-09-25" data-duration="75" data-tags="product,team">
+                    <div class="meeting-card-header">
+                        <div class="meeting-date">
+                            <span class="date-day">25</span>
+                            <span class="date-month">Sep</span>
+                        </div>
+                        <div class="meeting-actions-dropdown">
+                            <button class="action-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="actions-menu">
+                                <a href="#"><i class="fas fa-eye"></i> View Details</a>
+                                <a href="#"><i class="fas fa-download"></i> Download</a>
+                                <a href="#"><i class="fas fa-share"></i> Share</a>
+                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="meeting-card-body">
+                        <h3>Sprint Planning Session</h3>
+                        <p class="meeting-meta">
+                            <i class="fas fa-clock"></i> 1h 15m
+                            <i class="fas fa-users"></i> 7 participants
+                        </p>
+                        <div class="meeting-tags">
+                            <span class="tag">Product</span>
+                            <span class="tag">Team</span>
+                        </div>
+                        <div class="meeting-summary">
+                            Story point estimation, sprint goals definition, task assignments, and capacity planning...
+                        </div>
+                    </div>
+
+                    <div class="meeting-card-footer">
+                        <div class="participants-avatars">
+                            <div class="avatar-sm">MR</div>
+                            <div class="avatar-sm">SC</div>
+                            <div class="avatar-sm">JM</div>
+                            <div class="avatar-sm more">+4</div>
+                        </div>
+                        <button class="btn btn-secondary btn-sm">View Summary</button>
+                    </div>
+                </div>
+
+                <!-- Meeting Card 6 -->
+                <div class="meeting-card" data-date="2025-09-23" data-duration="50" data-tags="team">
+                    <div class="meeting-card-header">
+                        <div class="meeting-date">
+                            <span class="date-day">23</span>
+                            <span class="date-month">Sep</span>
+                        </div>
+                        <div class="meeting-actions-dropdown">
+                            <button class="action-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="actions-menu">
+                                <a href="#"><i class="fas fa-eye"></i> View Details</a>
+                                <a href="#"><i class="fas fa-download"></i> Download</a>
+                                <a href="#"><i class="fas fa-share"></i> Share</a>
+                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="meeting-card-body">
+                        <h3>One-on-One: Manager Check-in</h3>
+                        <p class="meeting-meta">
+                            <i class="fas fa-clock"></i> 50m
+                            <i class="fas fa-users"></i> 2 participants
+                        </p>
+                        <div class="meeting-tags">
+                            <span class="tag">Team</span>
+                        </div>
+                        <div class="meeting-summary">
+                            Career development discussion, feedback exchange, goal setting, and growth opportunities...
+                        </div>
+                    </div>
+
+                    <div class="meeting-card-footer">
+                        <div class="participants-avatars">
+                            <div class="avatar-sm">JM</div>
+                            <div class="avatar-sm">SC</div>
+                        </div>
+                        <button class="btn btn-secondary btn-sm">View Summary</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn">4</button>
+                <span>...</span>
+                <button class="pagination-btn">26</button>
+                <button class="pagination-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/meetings.js"></script>
+</body>
+</html>

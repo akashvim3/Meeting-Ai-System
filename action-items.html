@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Items - MeetingAI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/action-items.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>MeetingAI</span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="dashboard.html" class="btn-nav">Dashboard</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signup.html" class="btn-nav">Sign Up</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Dashboard</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="meetings.html" class="sidebar-link">
+                    <i class="fas fa-video"></i>
+                    <span>Meetings</span>
+                </a>
+                <a href="transcripts.html" class="sidebar-link">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Transcripts</span>
+                </a>
+                <a href="action-items.html" class="sidebar-link active">
+                    <i class="fas fa-tasks"></i>
+                    <span>Action Items</span>
+                    <span class="badge">45</span>
+                </a>
+                <a href="analytics.html" class="sidebar-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="settings.html" class="sidebar-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="action-items-header">
+                <div>
+                    <h1>Action Items</h1>
+                    <p>Track and manage all tasks from your meetings</p>
+                </div>
+                <button class="btn btn-primary" onclick="openAddTaskModal()">
+                    <i class="fas fa-plus"></i> New Action Item
+                </button>
+            </header>
+
+            <!-- Stats Overview -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div>
+                        <div class="stat-value">45</div>
+                        <div class="stat-label">Total Tasks</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #10b981, #14b8a6);">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div>
+                        <div class="stat-value">28</div>
+                        <div class="stat-label">Completed</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #f59e0b, #f97316);">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">In Progress</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div>
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Overdue</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-filter="all">
+                    All <span class="tab-count">45</span>
+                </button>
+                <button class="tab-btn" data-filter="todo">
+                    To Do <span class="tab-count">5</span>
+                </button>
+                <button class="tab-btn" data-filter="inprogress">
+                    In Progress <span class="tab-count">12</span>
+                </button>
+                <button class="tab-btn" data-filter="completed">
+                    Completed <span class="tab-count">28</span>
+                </button>
+                <button class="tab-btn" data-filter="overdue">
+                    Overdue <span class="tab-count">5</span>
+                </button>
+            </div>
+
+            <!-- Action Items Board -->
+            <div class="action-items-board">
+                <!-- Action Item 1 - High Priority -->
+                <div class="action-item priority-high" data-status="inprogress">
+                    <div class="action-item-header">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="task1">
+                            <label for="task1"></label>
+                        </div>
+                        <div class="action-item-content">
+                            <h3>Prepare technical documentation and API specifications</h3>
+                            <p class="action-description">Complete API documentation including endpoints, authentication, and code examples for developer portal.</p>
+
+                            <div class="action-meta">
+                                <span class="action-meeting">
+                                    <i class="fas fa-video"></i> Q4 Product Roadmap Review
+                                </span>
+                                <span class="action-date">
+                                    <i class="fas fa-calendar"></i> Due: Oct 6, 2025
+                                </span>
+                            </div>
+
+                            <div class="action-footer">
+                                <div class="action-assignee">
+                                    <div class="avatar-small" style="background: #10b981;">MR</div>
+                                    <span>Michael Rodriguez</span>
+                                </div>
+                                <div class="action-tags">
+                                    <span class="priority-badge high">High Priority</span>
+                                    <span class="status-badge inprogress">In Progress</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-item-menu">
+                            <button class="menu-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="menu-dropdown">
+                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="#"><i class="fas fa-user"></i> Reassign</a>
+                                <a href="#"><i class="fas fa-calendar-alt"></i> Change Due Date</a>
+                                <a href="#"><i class="fas fa-copy"></i> Duplicate</a>
+                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Item 2 - Medium Priority -->
+                <div class="action-item priority-medium" data-status="todo">
+                    <div class="action-item-header">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="task2">
+                            <label for="task2"></label>
+                        </div>
+                        <div class="action-item-content">
+                            <h3>Finalize marketing campaign materials</h3>
+                            <p class="action-description">Review and approve all campaign assets, including landing pages, email templates, and social media content.</p>
+
+                            <div class="action-meta">
+                                <span class="action-meeting">
+                                    <i class="fas fa-video"></i> Marketing Strategy Discussion
+                                </span>
+                                <span class="action-date">
+                                    <i class="fas fa-calendar"></i> Due: Oct 9, 2025
+                                </span>
+                            </div>
+
+                            <div class="action-footer">
+                                <div class="action-assignee">
+                                    <div class="avatar-small" style="background: #ec4899;">ET</div>
+                                    <span>Emily Thompson</span>
+                                </div>
+                                <div class="action-tags">
+                                    <span class="priority-badge medium">Medium Priority</span>
+                                    <span class="status-badge todo">To Do</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-item-menu">
+                            <button class="menu-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="menu-dropdown">
+                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="#"><i class="fas fa-user"></i> Reassign</a>
+                                <a href="#"><i class="fas fa-calendar-alt"></i> Change Due Date</a>
+                                <a href="#"><i class="fas fa-copy"></i> Duplicate</a>
+                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Item 3 - Completed -->
+                <div class="action-item priority-low completed" data-status="completed">
+                    <div class="action-item-header">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="task3" checked>
+                            <label for="task3"></label>
+                        </div>
+                        <div class="action-item-content">
+                            <h3>Schedule daily standups for launch week</h3>
+                            <p class="action-description">Set up recurring calendar invites for daily standup meetings during the product launch week with all team members.</p>
+
+                            <div class="action-meta">
+                                <span class="action-meeting">
+                                    <i class="fas fa-video"></i> Q4 Product Roadmap Review
+                                </span>
+                                <span class="action-date completed-date">
+                                    <i class="fas fa-check-circle"></i> Completed: Oct 3, 2025
+                                </span>
+                            </div>
+
+                            <div class="action-footer">
+                                <div class="action-assignee">
+                                    <div class="avatar-small" style="background: #6366f1;">SC</div>
+                                    <span>Sarah Chen</span>
+                                </div>
+                                <div class="action-tags">
+                                    <span class="priority-badge low">Low Priority</span>
+                                    <span class="status-badge completed">Completed</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-item-menu">
+                            <button class="menu-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="menu-dropdown">
+                                <a href="#"><i class="fas fa-undo"></i> Mark Incomplete</a>
+                                <a href="#"><i class="fas fa-copy"></i> Duplicate</a>
+                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Item 4 - Overdue -->
+                <div class="action-item priority-high overdue" data-status="overdue">
+                    <div class="action-item-header">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="task4">
+                            <label for="task4"></label>
+                        </div>
+                        <div class="action-item-content">
+                            <h3>Review and prioritize customer feature requests</h3>
+                            <p class="action-description">Analyze all customer feedback from the past quarter and create prioritized backlog for next sprint planning.</p>
+
+                            <div class="action-meta">
+                                <span class="action-meeting">
+                                    <i class="fas fa-video"></i> Sprint Planning Session
+                                </span>
+                                <span class="action-date overdue-date">
+                                    <i class="fas fa-exclamation-circle"></i> Overdue by 2 days
+                                </span>
+                            </div>
+
+                            <div class="action-footer">
+                                <div class="action-assignee">
+                                    <div class="avatar-small" style="background: #f59e0b;">Team</div>
+                                    <span>All Team Members</span>
+                                </div>
+                                <div class="action-tags">
+                                    <span class="priority-badge high">High Priority</span>
+                                    <span class="status-badge overdue">Overdue</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-item-menu">
+                            <button class="menu-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="menu-dropdown">
+                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="#"><i class="fas fa-user"></i> Reassign</a>
+                                <a href="#"><i class="fas fa-calendar-alt"></i> Extend Deadline</a>
+                                <a href="#"><i class="fas fa-copy"></i> Duplicate</a>
+                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Item 5 - In Progress -->
+                <div class="action-item priority-medium" data-status="inprogress">
+                    <div class="action-item-header">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="task5">
+                            <label for="task5"></label>
+                        </div>
+                        <div class="action-item-content">
+                            <h3>Set up communication channels for launch coordination</h3>
+                            <p class="action-description">Create dedicated Slack channels and establish communication protocols for the product launch week.</p>
+
+                            <div class="action-meta">
+                                <span class="action-meeting">
+                                    <i class="fas fa-video"></i> Weekly Team Standup
+                                </span>
+                                <span class="action-date">
+                                    <i class="fas fa-calendar"></i> Due: Oct 8, 2025
+                                </span>
+                            </div>
+
+                            <div class="action-footer">
+                                <div class="action-assignee">
+                                    <div class="avatar-small" style="background: #6366f1;">JM</div>
+                                    <span>John Mitchell</span>
+                                </div>
+                                <div class="action-tags">
+                                    <span class="priority-badge medium">Medium Priority</span>
+                                    <span class="status-badge inprogress">In Progress</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-item-menu">
+                            <button class="menu-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="menu-dropdown">
+                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="#"><i class="fas fa-user"></i> Reassign</a>
+                                <a href="#"><i class="fas fa-calendar-alt"></i> Change Due Date</a>
+                                <a href="#"><i class="fas fa-copy"></i> Duplicate</a>
+                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/action-items.js"></script>
+</body>
+</html>

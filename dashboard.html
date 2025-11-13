@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MeetingAI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>MeetingAI</span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="dashboard.html" class="btn-nav active">Dashboard</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signup.html" class="btn-nav">Sign Up</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Dashboard</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="meetings.html" class="sidebar-link">
+                    <i class="fas fa-video"></i>
+                    <span>Meetings</span>
+                    <span class="badge">12</span>
+                </a>
+                <a href="transcripts.html" class="sidebar-link">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Transcripts</span>
+                </a>
+                <a href="action-items.html" class="sidebar-link">
+                    <i class="fas fa-tasks"></i>
+                    <span>Action Items</span>
+                    <span class="badge">5</span>
+                </a>
+                <a href="analytics.html" class="sidebar-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="settings.html" class="sidebar-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">JD</div>
+                    <div class="user-info">
+                        <h4>John Doe</h4>
+                        <span>john@example.com</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Welcome back, John!</h1>
+                    <p>Here's what's happening with your meetings today</p>
+                </div>
+                <div class="header-right">
+                    <button class="btn btn-primary" id="startMeetingBtn">
+                        <i class="fas fa-plus"></i> New Meeting
+                    </button>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <div class="stats-cards">
+                <div class="stat-card-dash">
+                    <div class="stat-icon-dash">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Total Meetings</h3>
+                        <p class="stat-number-dash">156</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 12% from last month
+                        </span>
+                    </div>
+                </div>
+                <div class="stat-card-dash">
+                    <div class="stat-icon-dash">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Total Hours</h3>
+                        <p class="stat-number-dash">342</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 8% from last month
+                        </span>
+                    </div>
+                </div>
+                <div class="stat-card-dash">
+                    <div class="stat-icon-dash">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Action Items</h3>
+                        <p class="stat-number-dash">45</p>
+                        <span class="stat-change negative">
+                            <i class="fas fa-arrow-down"></i> 5 pending
+                        </span>
+                    </div>
+                </div>
+                <div class="stat-card-dash">
+                    <div class="stat-icon-dash">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Team Members</h3>
+                        <p class="stat-number-dash">24</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 3 new this month
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="dashboard-grid">
+                <!-- Recent Meetings -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2>Recent Meetings</h2>
+                        <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="meetings-list">
+                        <div class="meeting-item">
+                            <div class="meeting-info">
+                                <h4>Product Roadmap Q4 Review</h4>
+                                <p><i class="fas fa-calendar"></i> Today, 2:00 PM • 1h 30m</p>
+                                <div class="meeting-tags">
+                                    <span class="tag">Product</span>
+                                    <span class="tag">Strategy</span>
+                                </div>
+                            </div>
+                            <div class="meeting-actions">
+                                <button class="btn-icon" title="View Summary">
+                                    <i class="fas fa-file-alt"></i>
+                                </button>
+                                <button class="btn-icon" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="meeting-item">
+                            <div class="meeting-info">
+                                <h4>Weekly Team Standup</h4>
+                                <p><i class="fas fa-calendar"></i> Yesterday, 10:00 AM • 45m</p>
+                                <div class="meeting-tags">
+                                    <span class="tag">Team</span>
+                                </div>
+                            </div>
+                            <div class="meeting-actions">
+                                <button class="btn-icon" title="View Summary">
+                                    <i class="fas fa-file-alt"></i>
+                                </button>
+                                <button class="btn-icon" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="meeting-item">
+                            <div class="meeting-info">
+                                <h4>Client Presentation - TechCorp</h4>
+                                <p><i class="fas fa-calendar"></i> Oct 1, 2025 • 2h 15m</p>
+                                <div class="meeting-tags">
+                                    <span class="tag">Client</span>
+                                    <span class="tag">Sales</span>
+                                </div>
+                            </div>
+                            <div class="meeting-actions">
+                                <button class="btn-icon" title="View Summary">
+                                    <i class="fas fa-file-alt"></i>
+                                </button>
+                                <button class="btn-icon" title="Download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2>Quick Actions</h2>
+                    </div>
+                    <div class="quick-actions">
+                        <button class="action-btn">
+                            <i class="fas fa-microphone"></i>
+                            <span>Start Recording</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-upload"></i>
+                            <span>Upload Audio</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Schedule Meeting</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-users"></i>
+                            <span>Invite Team</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pending Action Items -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2>Pending Action Items</h2>
+                        <span class="badge-count">5</span>
+                    </div>
+                    <div class="action-items-list">
+                        <div class="action-item">
+                            <label>
+                                <input type="checkbox" class="action-checkbox">
+                            </label>
+                            <div class="action-content">
+                                <h4>Prepare Q4 financial report</h4>
+                                <p>From: Product Roadmap Meeting</p>
+                                <span class="due-date">Due: Oct 5, 2025</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <label>
+                                <input type="checkbox" class="action-checkbox">
+                            </label>
+                            <div class="action-content">
+                                <h4>Review marketing campaign metrics</h4>
+                                <p>From: Weekly Team Standup</p>
+                                <span class="due-date">Due: Oct 3, 2025</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <label>
+                                <input type="checkbox" class="action-checkbox">
+                            </label>
+                            <div class="action-content">
+                                <h4>Send proposal to TechCorp</h4>
+                                <p>From: Client Presentation</p>
+                                <span class="due-date urgent">Due: Today</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2>Recent Activity</h2>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>New transcript generated</h4>
+                                <p>Product Roadmap Q4 Review</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Action item completed</h4>
+                                <p>Update project timeline</p>
+                                <span class="activity-time">5 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>New team member added</h4>
+                                <p>Sarah Johnson joined the team</p>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Meeting Modal -->
+    <div class="modal" id="meetingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Start New Meeting</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="recording-interface">
+                    <div class="visualizer">
+                        <canvas id="audioVisualizer"></canvas>
+                    </div>
+                    <div class="recording-controls">
+                        <button class="record-btn" id="recordBtn">
+                            <i class="fas fa-microphone"></i>
+                            <span>Start Recording</span>
+                        </button>
+                        <button class="stop-btn hidden" id="stopBtn">
+                            <i class="fas fa-stop"></i>
+                            <span>Stop Recording</span>
+                        </button>
+                    </div>
+                    <div class="recording-info">
+                        <div class="timer" id="timer">00:00:00</div>
+                        <div class="status" id="status">Ready to record</div>
+                    </div>
+                    <div class="transcript-container hidden" id="transcriptContainer">
+                        <h3>Live Transcript</h3>
+                        <div class="live-transcript" id="liveTranscript">
+                            <!-- Real-time transcript will appear here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/recorder.js"></script>
+</body>
+</html>

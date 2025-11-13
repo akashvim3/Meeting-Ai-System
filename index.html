@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Real-Time Meeting Summarizer - AI-powered meeting transcription and summarization">
+    <title>MeetingAI - Real-Time Meeting Summarizer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>MeetingAI</span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="dashboard.html" class="btn-nav">Dashboard</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signup.html" class="btn-nav">Sign Up</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-circle circle-1"></div>
+            <div class="gradient-circle circle-2"></div>
+            <div class="gradient-circle circle-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="animate-up">Transform Meetings Into <span class="gradient-text">Actionable Insights</span></h1>
+                    <p class="animate-up delay-1">AI-powered real-time transcription, intelligent summaries, and automated action items. Never miss a detail again.</p>
+                    <div class="hero-buttons animate-up delay-2">
+                        <a href="dashboard.html" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i> Start Free Trial
+                        </a>
+                        <a href="#demo" class="btn btn-secondary">
+                            <i class="fas fa-play-circle"></i> Watch Demo
+                        </a>
+                    </div>
+                    <div class="trust-badges animate-up delay-3">
+                        <div class="badge">
+                            <i class="fas fa-check-circle"></i>
+                            <span>No Credit Card Required</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Enterprise Security</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-clock"></i>
+                            <span>Setup in 2 Minutes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image animate-up delay-2">
+                    <div class="mockup-container">
+                        <div class="mockup-screen">
+                            <div class="mockup-header">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="transcript-preview">
+                                    <div class="transcript-line">
+                                        <span class="speaker">John:</span>
+                                        <span class="text">Let's review the Q4 objectives...</span>
+                                    </div>
+                                    <div class="transcript-line">
+                                        <span class="speaker">Sarah:</span>
+                                        <span class="text">I'll prepare the analytics report...</span>
+                                    </div>
+                                    <div class="transcript-line active">
+                                        <span class="speaker">Mike:</span>
+                                        <span class="text typing">We need to focus on...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-target="50000">0</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="stat-number" data-target="1000000">0</div>
+                    <div class="stat-label">Meetings Transcribed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number" data-target="500000">0</div>
+                    <div class="stat-label">Hours Saved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Overview -->
+    <section class="features-overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Powerful Features</span>
+                <h2>Everything You Need for <span class="gradient-text">Smarter Meetings</span></h2>
+                <p>Advanced AI technology that transforms how teams collaborate and communicate</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Real-Time Transcription</h3>
+                    <p>Instant, accurate transcription with 98% accuracy rate. Supports 30+ languages with automatic speaker identification.</p>
+                    <a href="features.html" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card featured">
+                    <div class="badge-popular">Most Popular</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Summaries</h3>
+                    <p>Intelligent meeting summaries with key points, decisions, and action items automatically extracted and organized.</p>
+                    <a href="features.html" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Action Item Tracking</h3>
+                    <p>Automatically identify and assign tasks. Integration with popular project management tools.</p>
+                    <a href="features.html" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Smart Search</h3>
+                    <p>Find any discussion point instantly across all your meetings with AI-powered semantic search.</p>
+                    <a href="features.html" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Easy Collaboration</h3>
+                    <p>Share summaries, highlights, and transcripts with your team. Export to multiple formats.</p>
+                    <a href="features.html" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Enterprise Security</h3>
+                    <p>SOC 2 compliant, end-to-end encryption, and GDPR ready. Your data is always protected.</p>
+                    <a href="features.html" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Simple Process</span>
+                <h2>How It <span class="gradient-text">Works</span></h2>
+                <p>Get started in minutes with our streamlined workflow</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Connect Your Platform</h3>
+                    <p>Integrate with Zoom, Google Meet, Microsoft Teams, or use our web app for any meeting.</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <i class="fas fa-record-vinyl"></i>
+                    </div>
+                    <h3>Start Recording</h3>
+                    <p>Our AI joins your meeting and begins real-time transcription automatically.</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Get Instant Summaries</h3>
+                    <p>Receive comprehensive summaries, action items, and searchable transcripts immediately after.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="integrations">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Integrations</span>
+                <h2>Works With Your <span class="gradient-text">Favorite Tools</span></h2>
+                <p>Seamlessly integrate with the platforms you already use</p>
+            </div>
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <i class="fab fa-microsoft"></i>
+                    <span>Microsoft Teams</span>
+                </div>
+                <div class="integration-card">
+                    <i class="fas fa-video"></i>
+                    <span>Zoom</span>
+                </div>
+                <div class="integration-card">
+                    <i class="fab fa-google"></i>
+                    <span>Google Meet</span>
+                </div>
+                <div class="integration-card">
+                    <i class="fab fa-slack"></i>
+                    <span>Slack</span>
+                </div>
+                <div class="integration-card">
+                    <i class="fab fa-trello"></i>
+                    <span>Trello</span>
+                </div>
+                <div class="integration-card">
+                    <i class="fab fa-jira"></i>
+                    <span>Jira</span>
+                </div>
+                <div class="integration-card">
+                    <i class="fab fa-asana"></i>
+                    <span>Asana</span>
+                </div>
+                <div class="integration-card">
+                    <i class="fas fa-plus"></i>
+                    <span>50+ More</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2>Loved by <span class="gradient-text">Teams Worldwide</span></h2>
+                <p>See what our customers have to say</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"MeetingAI has transformed how our team collaborates. We save hours every week and never miss important action items anymore."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah Mitchell</h4>
+                            <span>Product Manager, TechCorp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The AI summaries are incredibly accurate. It's like having a personal assistant in every meeting. Absolutely game-changing!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <h4>John Davis</h4>
+                            <span>CEO, StartupHub</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Best investment we've made for our remote team. The search feature alone has saved us countless hours of reviewing recordings."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EC</div>
+                        <div class="author-info">
+                            <h4>Emily Chen</h4>
+                            <span>Director of Operations, GlobalTech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Meetings?</h2>
+                <p>Join thousands of teams already using MeetingAI to work smarter</p>
+                <div class="cta-buttons">
+                    <a href="dashboard.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i> Start Free Trial
+                    </a>
+                    <a href="contact.html" class="btn btn-outline btn-large">
+                        <i class="fas fa-calendar"></i> Schedule Demo
+                    </a>
+                </div>
+                <p class="cta-note">No credit card required • 14-day free trial • Cancel anytime</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>MeetingAI</span>
+                    </div>
+                    <p>Transform your meetings into actionable insights with AI-powered transcription and summarization.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Webinars</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MeetingAI. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
