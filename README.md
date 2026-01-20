@@ -275,7 +275,8 @@ Edit `css/style.css`:
 --primary-color: #your-color;
 
 ### Change Fonts
-@import url('https://fonts.googleapis.com/css2?family=Your+Font&display=swap');body {
+@import url('https://fonts.googleapis.com/css2?family=Your+Font&display=swap');
+body {
 font-family: 'Your Font', sans-serif;
 }
 
@@ -302,7 +303,7 @@ async function transcribeAudio(audioBlob) {
     return await response.json();
 }
 
-Recommended AI ServicesOpenAI Whisper - High accuracy, multilingualGoogle Cloud Speech-to-Text - Real-time streamingAssemblyAI - Specialized for meetingsAWS Transcribe - Scalable infrastructureAzure Speech - Enterprise featuresBackend IntegrationAdd backend API calls in js/ files:
+Recommended AI ServicesOpenAI Whisper - High accuracy, multilingualGoogle Cloud Speech-to-Text - Real-time streamingAssemblyAI - Specialized for meetings. Transcribe - Scalable infrastructure. Speech - Enterprise featuresBackend Integration, backend API calls in JS/ files:
 // Example: Save meeting
 async function saveMeeting(meetingData) {
     const response = await fetch('/api/meetings', {
@@ -318,7 +319,7 @@ async function saveMeeting(meetingData) {
 }
 
 👥 Contributing
-We welcome contributions! Please see CONTRIBUTING.md for details.How to Contribute
+We welcome contributions! Please see CONTRIBUTING.md for details. How to Contribute
 Fork the repository
 Create feature branch (git checkout -b feature/AmazingFeature)
 Commit changes (git commit -m 'Add AmazingFeature')
@@ -350,7 +351,30 @@ MDN Web Docs - Documentation reference
 CSS-Tricks - Design inspiration
 OpenAI - AI technology insights📊 Stats
 
-🗺️ RoadmapVersion 2.1 (Q1 2026) Real AI integration (OpenAI Whisper) Backend API (Node.js/Python) User authentication (JWT) Database integration (PostgreSQL) Real-time collaboration (WebSockets)Version 2.2 (Q2 2026) Mobile apps (React Native) Video recording support Advanced search (Elasticsearch) Email notifications Calendar integrationsVersion 3.0 (Q3 2026) AI assistant chatbot Custom AI models Enterprise SSO Advanced analytics API for developers💎 Premium Features (Coming Soon)White Label - Rebrand for your companyCustom Integrations - Build custom connectorsAdvanced Security - On-premise deploymentPriority Support - 24/7 dedicated supportSLA Guarantees - 99.99% uptime📞 ContactWebsite: www.meetingai.com
+🗺️ RoadmapVersion 2.1 (Q1 2026)
+  Real AI integration (OpenAI Whisper)
+  Backend API (Node.js/Python) 
+  User authentication (JWT) 
+  Database integration (PostgreSQL) 
+  Real-time collaboration (WebSockets)
+  Version 2.2 (Q2 2026) 
+  Mobile apps (React Native) 
+  Video recording support 
+  Advanced search (Elasticsearch) 
+  Email notifications 
+  Calendar integrations
+  Version 3.0 (Q3 2026) 
+  AI assistant chatbot 
+  Custom AI models 
+  Enterprise SSO 
+  Advanced analytics API for developers
+  💎 Premium Features (Coming Soon)
+  White Label - Rebrand for your company
+  Custom Integrations - Build custom connectors
+  Advanced Security - On-premise deployment
+  Priority Support - 24/7 dedicated support
+  SLA Guarantees - 99.99% uptime
+  📞 Contact Website: www.meetingai.com
 Email: hello@meetingai.com
 Twitter: @meetingai
 LinkedIn: MeetingAI
