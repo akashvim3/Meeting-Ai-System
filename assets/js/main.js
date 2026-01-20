@@ -4,14 +4,14 @@
 // ============================================
 
 // Navbar Scroll Effect
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', throttle(function() {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-});
+}, 100));
 
 // Mobile Menu Toggle
 const hamburger = document.getElementById('hamburger');
@@ -36,13 +36,13 @@ if (hamburger && navMenu) {
 const backToTop = document.getElementById('backToTop');
 
 if (backToTop) {
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', throttle(function() {
         if (window.scrollY > 300) {
             backToTop.classList.add('visible');
         } else {
             backToTop.classList.remove('visible');
         }
-    });
+    }, 100));
 
     backToTop.addEventListener('click', function() {
         window.scrollTo({
@@ -127,12 +127,12 @@ if ('IntersectionObserver' in window) {
 
 // Form Validation
 function validateEmail(email) {
-    const re = /^[^s@]+@[^s@]+.[^s@]+$/;
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
 
 function validatePhone(phone) {
-    const re = /^[ds-+()]+$/;
+    const re = /^[\d\s\-+()]+$/;
     return re.test(phone);
 }
 
@@ -170,10 +170,10 @@ function createTooltip(element, text) {
         tooltip.style.top = e.pageY + 10 + 'px';
     });
 
-    element.addEventListener('mousemove', function(e) {
+    element.addEventListener('mousemove', throttle(function(e) {
         tooltip.style.left = e.pageX + 10 + 'px';
         tooltip.style.top = e.pageY + 10 + 'px';
-    });
+    }, 16));
 
     element.addEventListener('mouseleave', function() {
         tooltip.style.display = 'none';
@@ -360,6 +360,65 @@ function copyToClipboard(text) {
         console.error('Failed to copy:', err);
         showNotification('Failed to copy', 'error');
     });
+}
+
+// Polyfills for older browsers
+if (!Array.prototype.includes) {
+  Array.prototype.includes = function(searchElement /*, fromIndex*/) {
+    'use strict';
+    var O = Object(this);
+    var len = parseInt(O.length) || 0;
+    if (len === 0) {
+      return false;
+    }
+    var n = parseInt(arguments[1]) || 0;
+    var k;
+    if (n >= 0) {
+      k = n;
+    } else {
+      k = len + n;
+      if (k < 0) { k = 0; }
+    }
+    var currentElement;
+    while (k < len) {
+      currentElement = O[k];
+      if (searchElement === currentElement ||
+         (searchElement !== searchElement && currentElement !== currentElement)) { // NaN !== NaN
+        return true;
+      }
+      k++;
+    }
+    return false;
+  };
+}
+
+if (!String.prototype.startsWith) {
+  String.prototype.startsWith = function(search, pos) {
+    return this.substr(!pos || pos < 0 ? 0 : +pos, search.length) === search;
+  };
+}
+
+if (!String.prototype.endsWith) {
+  String.prototype.endsWith = function(search, this_len) {
+    if (this_len === undefined || this_len > this.length) {
+      this_len = this.length;
+    }
+    return this.substring(this_len - search.length, this_len) === search;
+  };
+}
+
+// Throttle function to limit event firing rate
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
 }
 
 // Export Functions

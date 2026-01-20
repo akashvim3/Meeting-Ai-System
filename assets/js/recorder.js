@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) {
     setStatus('Error: Recording not supported in this browser', '#ef4444');
     recordBtn?.setAttribute('disabled', 'true');
-    logNotice('Browser lacks MediaRecorder or getUserMedia');
+    console.log('Browser lacks MediaRecorder or getUserMedia');
   }
 });
 
@@ -276,9 +276,7 @@ function addDownloadSection(audioBlob, audioUrl) {
 
   document.getElementById('dl-transcript')?.addEventListener('click', () => {
     const lines = Array.from(liveTranscript?.querySelectorAll('.transcript-line') || [])
-      .map(x => x.textContent.trim()).join('
-
-');
+      .map(x => x.textContent.trim()).join('\n\n');
     const text = `MEETING TRANSCRIPT
 Generated: ${new Date().toLocaleString()}
 Duration: ${timer?.textContent || '00:00:00'}
