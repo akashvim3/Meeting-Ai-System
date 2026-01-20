@@ -146,7 +146,7 @@ document.querySelectorAll('.theme-option').forEach(option => {
 document.querySelector('.settings-header .btn-primary')?.addEventListener('click', function() {
     const email = prompt('Enter team member email:');
 
-    if (email && /^[^s@]+@[^s@]+.[^s@]+$/.test(email)) {
+    if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         if (typeof showNotification === 'function') {
             showNotification(`Invitation sent to ${email}`, 'success');
         }

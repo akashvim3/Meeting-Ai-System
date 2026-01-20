@@ -89,7 +89,7 @@
                 <div class="search-filter">
                     <div class="search-box-meetings">
                         <i class="fas fa-search"></i>
-                        <label for="searchMeetings"></label><input type="text" id="searchMeetings" placeholder="Search meetings by title, participant, or content...">
+                        <input type="text" id="searchMeetings" placeholder="Search meetings by title, participant, or content...">
                     </div>
                 </div>
 
@@ -105,10 +105,10 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="dropdown-menu">
-                            <a href="#" data-sort="date">Date (Newest First)</a>
-                            <a href="#" data-sort="date-old">Date (Oldest First)</a>
-                            <a href="#" data-sort="duration">Duration</a>
-                            <a href="#" data-sort="title">Title (A-Z)</a>
+                            <a href="#" data-sort="date" aria-label="Sort by date, newest first">Date (Newest First)</a>
+                            <a href="#" data-sort="date-old" aria-label="Sort by date, oldest first">Date (Oldest First)</a>
+                            <a href="#" data-sort="duration" aria-label="Sort by duration">Duration</a>
+                            <a href="#" data-sort="title" aria-label="Sort by title A to Z">Title (A-Z)</a>
                         </div>
                     </div>
                     <div class="view-toggle">
@@ -128,15 +128,15 @@
                     <div class="filter-group">
                         <label>Date Range</label>
                         <div class="date-range">
-                            <label for="dateFrom"></label><input type="date" id="dateFrom">
+                            <input type="date" id="dateFrom">
                             <span>to</span>
-                            <label for="dateTo"></label><input type="date" id="dateTo">
+                            <input type="date" id="dateTo">
                         </div>
                     </div>
 
                     <div class="filter-group">
                         <label>Duration</label>
-                        <label for="durationFilter"></label><select id="durationFilter">
+                        <select id="durationFilter">
                             <option value="">All Durations</option>
                             <option value="0-30">0-30 minutes</option>
                             <option value="30-60">30-60 minutes</option>
@@ -147,7 +147,7 @@
 
                     <div class="filter-group">
                         <label>Participants</label>
-                        <label for="participantFilter"></label><select id="participantFilter">
+                        <select id="participantFilter">
                             <option value="">All Participants</option>
                             <option value="john">John Mitchell</option>
                             <option value="sarah">Sarah Chen</option>
@@ -199,11 +199,11 @@
                                 <i class="fas fa-ellipsis-v"></i>
                             </button>
                             <div class="actions-menu">
-                                <a href="#"><i class="fas fa-eye"></i> View Details</a>
-                                <a href="#"><i class="fas fa-download"></i> Download</a>
-                                <a href="#"><i class="fas fa-share"></i> Share</a>
-                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                                <a href="#" aria-label="View Details"><i class="fas fa-eye" aria-hidden="true"></i> View Details</a>
+                                <a href="#" aria-label="Download"><i class="fas fa-download" aria-hidden="true"></i> Download</a>
+                                <a href="#" aria-label="Share"><i class="fas fa-share" aria-hidden="true"></i> Share</a>
+                                <a href="#" aria-label="Edit"><i class="fas fa-edit" aria-hidden="true"></i> Edit</a>
+                                <a href="#" class="danger" aria-label="Delete"><i class="fas fa-trash" aria-hidden="true"></i> Delete</a>
                             </div>
                         </div>
                     </div>
@@ -246,11 +246,11 @@
                                 <i class="fas fa-ellipsis-v"></i>
                             </button>
                             <div class="actions-menu">
-                                <a href="#"><i class="fas fa-eye"></i> View Details</a>
-                                <a href="#"><i class="fas fa-download"></i> Download</a>
-                                <a href="#"><i class="fas fa-share"></i> Share</a>
-                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                                <a href="#" aria-label="View Details"><i class="fas fa-eye" aria-hidden="true"></i> View Details</a>
+                                <a href="#" aria-label="Download"><i class="fas fa-download" aria-hidden="true"></i> Download</a>
+                                <a href="#" aria-label="Share"><i class="fas fa-share" aria-hidden="true"></i> Share</a>
+                                <a href="#" aria-label="Edit"><i class="fas fa-edit" aria-hidden="true"></i> Edit</a>
+                                <a href="#" class="danger" aria-label="Delete"><i class="fas fa-trash" aria-hidden="true"></i> Delete</a>
                             </div>
                         </div>
                     </div>
@@ -292,11 +292,11 @@
                                 <i class="fas fa-ellipsis-v"></i>
                             </button>
                             <div class="actions-menu">
-                                <a href="#"><i class="fas fa-eye"></i> View Details</a>
-                                <a href="#"><i class="fas fa-download"></i> Download</a>
-                                <a href="#"><i class="fas fa-share"></i> Share</a>
-                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                                <a href="#" aria-label="View Details"><i class="fas fa-eye" aria-hidden="true"></i> View Details</a>
+                                <a href="#" aria-label="Download"><i class="fas fa-download" aria-hidden="true"></i> Download</a>
+                                <a href="#" aria-label="Share"><i class="fas fa-share" aria-hidden="true"></i> Share</a>
+                                <a href="#" aria-label="Edit"><i class="fas fa-edit" aria-hidden="true"></i> Edit</a>
+                                <a href="#" class="danger" aria-label="Delete"><i class="fas fa-trash" aria-hidden="true"></i> Delete</a>
                             </div>
                         </div>
                     </div>
@@ -339,11 +339,11 @@
                                 <i class="fas fa-ellipsis-v"></i>
                             </button>
                             <div class="actions-menu">
-                                <a href="#"><i class="fas fa-eye"></i> View Details</a>
-                                <a href="#"><i class="fas fa-download"></i> Download</a>
-                                <a href="#"><i class="fas fa-share"></i> Share</a>
-                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                                <a href="#" aria-label="View Details"><i class="fas fa-eye" aria-hidden="true"></i> View Details</a>
+                                <a href="#" aria-label="Download"><i class="fas fa-download" aria-hidden="true"></i> Download</a>
+                                <a href="#" aria-label="Share"><i class="fas fa-share" aria-hidden="true"></i> Share</a>
+                                <a href="#" aria-label="Edit"><i class="fas fa-edit" aria-hidden="true"></i> Edit</a>
+                                <a href="#" class="danger" aria-label="Delete"><i class="fas fa-trash" aria-hidden="true"></i> Delete</a>
                             </div>
                         </div>
                     </div>
@@ -385,11 +385,11 @@
                                 <i class="fas fa-ellipsis-v"></i>
                             </button>
                             <div class="actions-menu">
-                                <a href="#"><i class="fas fa-eye"></i> View Details</a>
-                                <a href="#"><i class="fas fa-download"></i> Download</a>
-                                <a href="#"><i class="fas fa-share"></i> Share</a>
-                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                                <a href="#" aria-label="View Details"><i class="fas fa-eye" aria-hidden="true"></i> View Details</a>
+                                <a href="#" aria-label="Download"><i class="fas fa-download" aria-hidden="true"></i> Download</a>
+                                <a href="#" aria-label="Share"><i class="fas fa-share" aria-hidden="true"></i> Share</a>
+                                <a href="#" aria-label="Edit"><i class="fas fa-edit" aria-hidden="true"></i> Edit</a>
+                                <a href="#" class="danger" aria-label="Delete"><i class="fas fa-trash" aria-hidden="true"></i> Delete</a>
                             </div>
                         </div>
                     </div>
@@ -432,11 +432,11 @@
                                 <i class="fas fa-ellipsis-v"></i>
                             </button>
                             <div class="actions-menu">
-                                <a href="#"><i class="fas fa-eye"></i> View Details</a>
-                                <a href="#"><i class="fas fa-download"></i> Download</a>
-                                <a href="#"><i class="fas fa-share"></i> Share</a>
-                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                                <a href="#" class="danger"><i class="fas fa-trash"></i> Delete</a>
+                                <a href="#" aria-label="View Details"><i class="fas fa-eye" aria-hidden="true"></i> View Details</a>
+                                <a href="#" aria-label="Download"><i class="fas fa-download" aria-hidden="true"></i> Download</a>
+                                <a href="#" aria-label="Share"><i class="fas fa-share" aria-hidden="true"></i> Share</a>
+                                <a href="#" aria-label="Edit"><i class="fas fa-edit" aria-hidden="true"></i> Edit</a>
+                                <a href="#" class="danger" aria-label="Delete"><i class="fas fa-trash" aria-hidden="true"></i> Delete</a>
                             </div>
                         </div>
                     </div>
